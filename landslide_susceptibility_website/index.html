@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>北京市浅层滑坡易发性评价信息系统</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-logo" aria-hidden="true"><span></span></div>
+        <div class="brand-text">
+          <h1>北京市浅层滑坡<br>易发性评价系统</h1>
+          <p>2023 极端降雨事件型评价</p>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="系统导航">
+        <button class="nav-item active" data-view="home"><i>⌂</i><span>登录首页</span></button>
+        <button class="nav-item" data-view="dashboard"><i>▦</i><span>数字大厅</span></button>
+        <button class="nav-item" data-view="map"><i>◇</i><span>易发性地图</span></button>
+        <button class="nav-item" data-view="model"><i>↗</i><span>模型评价</span></button>
+        <button class="nav-item" data-view="data"><i>◉</i><span>数据管理</span></button>
+        <button class="nav-item" data-view="report"><i>▣</i><span>报告导出</span></button>
+      </nav>
+
+      <div class="side-illustration" aria-hidden="true">
+        <div class="mountain m1"></div><div class="mountain m2"></div><div class="mountain m3"></div>
+        <div class="river"></div>
+      </div>
+      <button class="help-btn" data-action="help">? 系统帮助</button>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="title-block">
+          <h2 id="viewTitle">登录首页</h2>
+          <p id="viewSubtitle">科学评估 · 精准识别 · 智慧决策</p>
+        </div>
+        <div class="top-tools">
+          <label class="search-wrap"><span>⌕</span><input id="globalSearch" type="search" placeholder="搜索功能、图层、区域..." /></label>
+          <button class="time-picker" data-action="date">2023-07-28 00:00 ～ 2023-08-03 24:00 <b>▾</b></button>
+          <button class="ghost-btn" data-action="export">⇧ 导出</button>
+          <button class="icon-btn" data-action="notice">🔔</button>
+          <button class="user-chip" data-action="profile"><span class="avatar"></span><em id="userRoleText">游客</em><b></b></button>
+        </div>
+      </header>
+
+      <section class="view active" id="home" data-title="登录首页" data-subtitle="科学评估 · 精准识别 · 智慧决策">
+        <div class="home-grid">
+          <article class="hero-card glass-card">
+            <div class="hero-copy">
+              <span class="eyebrow">Beijing shallow landslide susceptibility</span>
+              <h3>科学评估 · 精准识别 · 智慧决策</h3>
+              <p>构建面向 2023 年北京极端降雨事件的浅层滑坡易发性评价原型系统，支持易发性地图浏览、模型评价、数据治理与报告输出。</p>
+              <div class="feature-list">
+                <div><i>▧</i><strong>易发性地图</strong><span>多源数据融合，精细化易发性分区</span></div>
+                <div><i>✦</i><strong>模型评价</strong><span>XGBoost、RF 对照与稳健性验证</span></div>
+                <div><i>◍</i><strong>数据管理</strong><span>滑坡清单、预测单元与因子图层管理</span></div>
+                <div><i>▣</i><strong>报告导出</strong><span>一键生成课程报告与专题图件</span></div>
+              </div>
+            </div>
+            <div class="hero-visual" aria-label="三维易发性图层示意">
+              <div class="stack layer-1"></div><div class="stack layer-2"></div><div class="stack layer-3"></div>
+              <svg class="mini-map" viewBox="0 0 460 300">
+                <defs>
+                  <linearGradient id="heroRisk" x1="0" x2="1" y1="0" y2="1">
+                    <stop offset="0" stop-color="#18d6bf"/><stop offset="0.45" stop-color="#f5cf49"/><stop offset="1" stop-color="#ff4d42"/>
+                  </linearGradient>
+                  <filter id="heroGlow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                </defs>
+                <path d="M65 135C88 50 185 25 277 45c97 21 158 88 151 166-7 75-101 105-203 91C128 288 43 220 65 135Z" fill="url(#heroRisk)" opacity=".95" filter="url(#heroGlow)"/>
+                <path d="M86 162c78-48 174-64 316-32" fill="none" stroke="#052d38" stroke-width="5" opacity=".25"/>
+                <path d="M109 205c83-31 165-41 262-26" fill="none" stroke="#052d38" stroke-width="4" opacity=".25"/>
+                <circle cx="122" cy="179" r="5"/><circle cx="173" cy="226" r="4"/><circle cx="342" cy="120" r="5"/><circle cx="290" cy="244" r="4"/>
+              </svg>
+            </div>
+            <div class="quick-row">
+              <button class="quick-card" data-view="dashboard"><span>进入数字大厅</span><small>浏览综合态势与数据概览</small><b>›</b></button>
+              <button class="quick-card" data-view="map"><span>查看易发性地图</span><small>查看分区与空间分布</small><b>›</b></button>
+              <button class="quick-card" data-view="model"><span>查看模型评价</span><small>查看训练与验证结果</small><b>›</b></button>
+            </div>
+          </article>
+
+          <article class="login-card glass-card">
+            <div class="card-head">
+              <div><h3>用户登录</h3><p>登录后可进入完整功能模块</p></div>
+              <div class="role-tabs"><button class="active" data-role="研究人员">研究人员</button><button data-role="管理员">管理员</button></div>
+            </div>
+            <form id="loginForm" class="login-form">
+              <label><i>♙</i><input value="researcher" placeholder="请输入用户名" /></label>
+              <label><i>🔒</i><input type="password" value="123456" placeholder="请输入密码" /><button type="button" class="mini-action" data-action="togglePassword">👁</button></label>
+              <div class="captcha-row"><label><i>✉</i><input placeholder="请输入验证码" value="7G4X" /></label><div class="captcha">7G4X</div><button type="button" class="icon-btn" data-action="captcha">↻</button></div>
+              <div class="form-row"><label class="check"><input type="checkbox" checked> 记住我</label><a href="#" data-action="forgot">忘记密码?</a></div>
+              <button class="primary-btn wide" type="submit">登录系统</button>
+              <button class="outline-btn wide" type="button" data-view="dashboard">◎ 游客预览</button>
+            </form>
+          </article>
+        </div>
+
+        <div class="home-bottom">
+          <article class="glass-card data-summary">
+            <div class="card-head"><h3>数据摘要</h3><a data-view="data">查看数据资产 ›</a></div>
+            <div class="metric-row">
+              <div class="metric"><i>▰</i><span>研究区面积</span><strong>16,411 km²</strong></div>
+              <div class="metric blue"><i>▤</i><span>滑坡清单</span><strong>1,246 处</strong></div>
+              <div class="metric green"><i>✣</i><span>核心模型</span><strong>XGBoost</strong></div>
+              <div class="metric purple"><i>⬡</i><span>易发性分区</span><strong>5 级</strong></div>
+              <div class="metric orange"><i>▣</i><span>输出产品</span><strong>8 项</strong></div>
+            </div>
+            <div class="news-line"><b>最新动态</b><span>● 2023-08-03 完成模型训练与评估</span><span>● 2023-08-02 更新滑坡清单数据</span><span>● 2023-08-01 发布易发性分区成果</span></div>
+          </article>
+
+          <article class="glass-card workflow-card">
+            <div class="card-head"><h3>系统流程示意图</h3><p>登录后可访问以下功能模块</p></div>
+            <div class="flow-line">
+              <button data-view="dashboard"><i>▦</i><span>数字大厅</span><small>综合态势总览</small></button>
+              <b>→</b><button data-view="map"><i>◇</i><span>易发性地图</span><small>空间分析与分区</small></button>
+              <b>→</b><button data-view="model"><i>↗</i><span>模型评价</span><small>训练与评估</small></button>
+              <b>→</b><button data-view="data"><i>◉</i><span>数据管理</span><small>治理与管理</small></button>
+              <b>→</b><button data-view="report"><i>▣</i><span>报告导出</span><small>成果输出</small></button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="view" id="dashboard" data-title="数字大厅" data-subtitle="研究区、样本、因子、模型结果与易发性分区总览">
+        <div class="kpi-grid">
+          <article class="kpi-card"><i>▰</i><div><span>研究区</span><strong>16,411 km²</strong><p>北京市域陆域面积</p></div></article>
+          <article class="kpi-card blue"><i>▤</i><div><span>滑坡清单</span><strong>1,246 处</strong><p>2023 极端降雨事件型</p></div></article>
+          <article class="kpi-card green"><i>✣</i><div><span>核心模型</span><strong>XGBoost</strong><p>集成学习模型</p></div></article>
+          <article class="kpi-card purple"><i>▣</i><div><span>输出产品</span><strong>8 项</strong><p>地图、表格与模型审计</p></div></article>
+        </div>
+        <div class="dashboard-grid">
+          <article class="glass-card map-overview">
+            <div class="card-head"><h3>北京市浅层滑坡易发性空间分布</h3><button class="ghost-btn small" data-view="map">空间查询 ›</button></div>
+            <div class="gis-map overview-map">
+              <svg viewBox="0 0 900 520">
+                <defs>
+                  <linearGradient id="riskMap" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#10c58d"/><stop offset=".36" stop-color="#b8d947"/><stop offset=".68" stop-color="#ff9e26"/><stop offset="1" stop-color="#ea2f38"/></linearGradient>
+                  <filter id="mapGlow"><feGaussianBlur stdDeviation="5" result="g"/><feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                </defs>
+                <path class="base-region" d="M98 242C124 87 300 40 470 72c175 34 342 135 330 293-12 148-183 190-352 175C260 522 57 416 98 242Z"/>
+                <path class="r-low" d="M433 83c181 22 333 133 318 280-8 82-82 130-178 150 16-76 20-146-6-210-28-75-80-145-134-220Z"/>
+                <path class="r-mid" d="M233 110c82-49 164-52 246-20 53 67 93 128 104 196-101 13-192-5-288-63-45-28-65-65-62-113Z"/>
+                <path class="r-high" d="M105 242c18-70 51-109 128-132-3 50 17 92 75 124 91 51 181 65 275 53 26 69 19 148-10 226-43 15-92 23-144 20-182-13-370-119-324-291Z"/>
+                <path class="r-extreme" d="M95 267c55-44 111-38 179 15 78 61 166 111 299 231-83 35-259 17-376-54-89-54-136-131-102-192Z" filter="url(#mapGlow)"/>
+                <g class="districts"><text x="190" y="112">延庆区</text><text x="421" y="190">怀柔区</text><text x="603" y="178">密云区</text><text x="670" y="296">平谷区</text><text x="317" y="263">昌平区</text><text x="487" y="309">顺义区</text><text x="152" y="360">门头沟区</text><text x="328" y="354">海淀区</text><text x="425" y="370">朝阳区</text><text x="287" y="413">丰台区</text><text x="194" y="447">房山区</text><text x="525" y="456">通州区</text><text x="435" y="475">大兴区</text></g>
+                <g class="points"><circle cx="151" cy="356" r="5"/><circle cx="186" cy="424" r="4"/><circle cx="235" cy="458" r="5"/><circle cx="680" cy="272" r="4"/><circle cx="624" cy="188" r="4"/><circle cx="411" cy="191" r="3"/></g>
+              </svg>
+              <div class="map-popup"><strong>密云区 · 东北部山区</strong><span>易发性等级：<b>高易发性</b></span><span>面积：312.48 km²</span><button data-view="map">空间查询 ›</button></div>
+              <div class="legend-panel"><b>易发性分区</b><span><i class="lv1"></i>低</span><span><i class="lv2"></i>较低</span><span><i class="lv3"></i>中等</span><span><i class="lv4"></i>较高</span><span><i class="lv5"></i>高/极高</span></div>
+            </div>
+          </article>
+          <article class="glass-card process-card">
+            <div class="card-head"><h3>评价流程</h3><button class="ghost-btn small" data-action="workflow">查看流程详情 ›</button></div>
+            <div class="stepper"><div class="done"><i>✓</i><span>数据准备</span><small>07-20</small></div><div class="done"><i>✣</i><span>因子处理</span><small>07-21</small></div><div class="done"><i>⌁</i><span>模型训练</span><small>07-22</small></div><div class="active"><i>◇</i><span>易发性计算</span><small>07-22</small></div><div><i>▣</i><span>结果输出</span><small>07-23</small></div></div>
+          </article>
+          <article class="glass-card factor-card">
+            <div class="card-head"><h3>主要因子贡献</h3><button class="ghost-btn small" data-view="model">因子详情 ›</button></div>
+            <div class="bar-chart"><div style="--v:92%"><span>坡度</span><b>0.198</b></div><div style="--v:78%"><span>地形起伏度</span><b>0.157</b></div><div style="--v:66%"><span>降雨强度</span><b>0.132</b></div><div style="--v:50%"><span>坡向</span><b>0.101</b></div><div style="--v:42%"><span>地层岩性</span><b>0.089</b></div></div>
+          </article>
+          <article class="glass-card donut-card"><div class="card-head"><h3>易发性面积占比</h3></div><div class="donut"><span>16,411<small>km²</small></span></div><div class="mini-legend"><i class="lv1"></i>低 <i class="lv2"></i>较低 <i class="lv3"></i>中等 <i class="lv4"></i>较高 <i class="lv5"></i>高</div></article>
+          <article class="glass-card status-card"><h3>模型状态</h3><strong>运行正常</strong><p>模型版本：v2.3.1<br>AUC = 演示值｜TSS = 演示值</p><button class="outline-btn" data-view="model">模型审计</button></article>
+          <article class="glass-card uncertainty"><h3>不确定性说明</h3><p>评价结果基于有限清单与多源因子数据，采用机器学习模型估计。当前系统用于课程原型展示，最终数值应以论文复核结果替换。</p><div class="risk-gauge"><span></span></div><button class="ghost-btn small" data-action="uncertainty">查看说明 ›</button></article>
+          <article class="glass-card trend-card"><div class="card-head"><h3>历史降雨与滑坡数量趋势</h3><button class="ghost-btn small">查看详情 ›</button></div><div class="combo-chart"><i style="--h:18%"></i><i style="--h:36%"></i><i style="--h:72%"></i><i style="--h:96%"></i><i style="--h:62%"></i><i style="--h:23%"></i><i style="--h:30%"></i><svg viewBox="0 0 500 160"><polyline points="20,132 95,101 170,62 245,30 320,75 395,126 470,116"/></svg></div></article>
+        </div>
+        <button class="floating-cta" data-view="report">生成评价报告 ›</button>
+      </section>
+
+      <section class="view" id="map" data-title="易发性地图" data-subtitle="图层筛选、空间查询、区域详情与结果表格">
+        <div class="map-layout">
+          <article class="glass-card filter-panel">
+            <div class="card-head"><h3>图层与筛选</h3></div>
+            <label>研究区选择<select><option>北京市域</option><option>西部山区</option><option>东北部山区</option></select></label>
+            <label>时间范围<input value="2023-07-28 00:00 ～ 2023-08-03 24:00" /></label>
+            <div class="filter-group"><b>易发性等级筛选</b><div class="checks"><label><input type="checkbox" checked data-filter="lv1">低</label><label><input type="checkbox" checked data-filter="lv2">较低</label><label><input type="checkbox" checked data-filter="lv3">中等</label><label><input type="checkbox" checked data-filter="lv4">较高</label><label><input type="checkbox" checked data-filter="lv5">高</label><label><input type="checkbox" checked data-filter="lv6">极高</label></div></div>
+            <div class="filter-group"><b>因子图层（7/7）</b><button class="text-btn" data-action="toggleFactors">全部展开 / 折叠</button><label><input type="checkbox" checked>坡度因子 <em>ⓘ</em></label><label><input type="checkbox" checked>地形起伏度 <em>ⓘ</em></label><label><input type="checkbox" checked>地质构造 <em>ⓘ</em></label><label><input type="checkbox" checked>降雨因子 <em>ⓘ</em></label><label><input type="checkbox" checked>植被覆盖度 <em>ⓘ</em></label><label><input type="checkbox" checked>土壤类型 <em>ⓘ</em></label><label><input type="checkbox" checked>人类活动因子 <em>ⓘ</em></label></div>
+            <div class="filter-group"><b>清单点图层</b><label><input id="inventoryToggle" type="checkbox" checked>历史滑坡点</label><label><input type="checkbox" checked>工程治理点</label></div>
+            <label class="toggle-line"><span>不确定性指数</span><input id="uncertaintyToggle" type="checkbox" checked><i></i></label>
+            <button class="primary-btn wide" data-action="spatialQuery">⌕ 开始空间查询</button>
+          </article>
+
+          <article class="glass-card map-workspace">
+            <div class="card-head"><h3>北京市浅层滑坡易发性等级地图</h3><span class="live-dot">框选查询已启用</span></div>
+            <div class="map-toolbar"><button class="active">图层切换</button><button class="active">框选查询</button><button data-action="clearSelection">清除选择</button><button>测距</button><button>测面</button><button>全图</button></div>
+            <div class="gis-map full-map">
+              <svg viewBox="0 0 900 560">
+                <use href="#mapSymbol"></use>
+                <path class="selection-region" d="M612 164C711 193 760 251 748 331c-62 15-114 6-167-29-15-61-9-103 31-138Z"/>
+                <g class="map-labels"><text x="168" y="121">延庆区</text><text x="407" y="184">怀柔区</text><text x="620" y="168">密云区</text><text x="675" y="310">平谷区</text><text x="316" y="285">昌平区</text><text x="495" y="316">顺义区</text><text x="151" y="379">门头沟区</text><text x="316" y="379">海淀区</text><text x="432" y="392">朝阳区</text><text x="280" y="432">丰台区</text><text x="187" y="468">房山区</text><text x="533" y="467">通州区</text><text x="435" y="500">大兴区</text></g>
+                <g class="inventory-points"><circle cx="154" cy="386" r="6"/><circle cx="197" cy="458" r="5"/><circle cx="244" cy="482" r="5"/><circle cx="685" cy="291" r="5"/><circle cx="631" cy="186" r="5"/><circle cx="420" cy="202" r="4"/></g>
+              </svg>
+              <div class="legend-panel collapsible"><b>易发性等级图例</b><span><i class="lv1"></i>低</span><span><i class="lv2"></i>较低</span><span><i class="lv3"></i>中等</span><span><i class="lv4"></i>较高</span><span><i class="lv5"></i>高</span><span><i class="lv6"></i>极高</span><button data-action="collapseLegend">收起</button></div>
+              <div class="map-popup selected"><strong>平谷区</strong><span>易发性等级：<b>较高</b></span><span>面积：948.32 km²</span><span>占比：20.14%</span><button data-action="regionDetail">查看详情 ›</button></div>
+              <div class="zoom-control"><button>+</button><button>−</button></div><div class="compass">N</div><div class="scale">0&nbsp;&nbsp;&nbsp;15&nbsp;&nbsp;&nbsp;30&nbsp;&nbsp;&nbsp;45 km</div>
+            </div>
+            <div class="bottom-toolbar"><button data-action="attributeQuery">属性查询</button><button data-action="exportSelection">导出选区</button><button data-action="bufferAnalysis">缓冲区分析</button><button data-action="clearSelection">清除</button></div>
+          </article>
+
+          <article class="glass-card region-panel">
+            <div class="card-head"><h3>区域详情</h3><button class="primary-btn small" data-action="exportRegion">导出结果</button></div>
+            <div class="region-title"><strong>平谷区</strong><span>较高易发区</span></div>
+            <dl><dt>行政区划</dt><dd>平谷区</dd><dt>面积</dt><dd>948.32 km²</dd><dt>易发性等级</dt><dd class="orange">较高</dd><dt>面积占比</dt><dd>20.14%</dd><dt>平均易发性指数</dt><dd>0.62</dd><dt>主要致灾因子</dt><dd>降雨因子、坡度因子、地形起伏度</dd><dt>历史滑坡点数量</dt><dd>246 个</dd></dl>
+            <h4>致灾因子贡献度</h4>
+            <div class="radar"><span></span><b style="--x:50%;--y:8%">降雨 0.82</b><b style="--x:85%;--y:32%">坡度 0.76</b><b style="--x:78%;--y:71%">起伏 0.65</b><b style="--x:43%;--y:88%">构造 0.48</b><b style="--x:8%;--y:70%">土壤 0.41</b><b style="--x:7%;--y:31%">人类 0.38</b></div>
+          </article>
+
+          <article class="glass-card result-table">
+            <div class="card-head"><h3>查询结果（共 6 条）</h3><div><button class="ghost-btn small" data-action="exportTable">导出表格</button><button class="ghost-btn small" data-action="clearTable">清空结果</button></div></div>
+            <table><thead><tr><th>序号</th><th>行政区</th><th>面积（km²）</th><th>易发性等级</th><th>平均指数</th><th>面积占比</th><th>历史滑坡点</th><th>主要致灾因子</th><th>操作</th></tr></thead><tbody>
+              <tr><td>1</td><td>平谷区</td><td>948.32</td><td><span class="dot orange"></span>较高</td><td>0.62</td><td>20.14%</td><td>246</td><td>降雨因子、坡度因子、地形起伏度</td><td><button data-action="regionDetail">查看详情</button></td></tr>
+              <tr><td>2</td><td>密云区</td><td>1,071.43</td><td><span class="dot orange"></span>较高</td><td>0.58</td><td>18.70%</td><td>231</td><td>降雨因子、地形起伏度、地质构造</td><td><button data-action="regionDetail">查看详情</button></td></tr>
+              <tr><td>3</td><td>房山区</td><td>1,856.21</td><td><span class="dot red"></span>高</td><td>0.71</td><td>14.32%</td><td>312</td><td>降雨因子、坡度因子、地形起伏度</td><td><button data-action="regionDetail">查看详情</button></td></tr>
+              <tr><td>4</td><td>门头沟区</td><td>467.58</td><td><span class="dot orange"></span>较高</td><td>0.57</td><td>8.63%</td><td>128</td><td>降雨因子、地质构造、人类活动因子</td><td><button data-action="regionDetail">查看详情</button></td></tr>
+              <tr><td>5</td><td>怀柔区</td><td>1,017.76</td><td><span class="dot yellow"></span>中等</td><td>0.44</td><td>7.89%</td><td>95</td><td>坡度因子、地形起伏度、植被覆盖度</td><td><button data-action="regionDetail">查看详情</button></td></tr>
+              <tr><td>6</td><td>延庆区</td><td>1,992.14</td><td><span class="dot yellow"></span>中等</td><td>0.43</td><td>7.32%</td><td>88</td><td>坡度因子、地形起伏度、土壤类型</td><td><button data-action="regionDetail">查看详情</button></td></tr>
+            </tbody></table>
+          </article>
+        </div>
+      </section>
+
+      <section class="view" id="model" data-title="模型评价" data-subtitle="模型总览、验证结果、因子解释与运行审计">
+        <div class="tabbar"><button class="active" data-tab="overview">模型总览</button><button data-tab="validation">验证结果</button><button data-tab="shap">因子解释</button><button data-tab="audit">运行审计</button></div>
+        <div class="model-summary">
+          <article class="kpi-card"><i>✣</i><div><span>核心模型</span><strong>XGBoost v1.3.2</strong><p>最佳表现模型</p></div></article>
+          <article class="kpi-card purple"><i>✓</i><div><span>空间交叉验证</span><strong>5-fold GroupKFold</strong><p>空间分组策略</p></div></article>
+          <article class="kpi-card orange"><i>⛓</i><div><span>负样本敏感性</span><strong>中等敏感</strong><p>±10% 负样本扰动</p></div></article>
+          <article class="kpi-card green"><i>⌁</i><div><span>运行状态</span><strong>可展示</strong><p>运行正常，无异常</p></div></article>
+        </div>
+        <article class="glass-card model-table">
+          <div class="card-head"><h3>模型运行记录</h3><div><select><option>全部模型</option><option>XGBoost</option><option>RF</option></select><button class="ghost-btn small" data-action="exportAudit">导出模型审计</button></div></div>
+          <table><thead><tr><th>运行ID</th><th>模型名称</th><th>算法</th><th>数据版本</th><th>空间验证</th><th class="sorted">AUC ↑</th><th>PR-AUC ↑</th><th>负样本敏感性</th><th>状态</th><th>操作</th></tr></thead><tbody>
+            <tr><td>RUN079R_B <span class="tag ok">推荐</span></td><td>XGBoost v1.3.2</td><td>XGBoost</td><td>v20230728</td><td>5-fold GroupKFold</td><td class="green-text">0.892</td><td>0.642</td><td>中等敏感</td><td><span class="tag blue">复核中</span></td><td><button data-action="modelDetail">查看详情</button></td></tr>
+            <tr><td>RUN078R_A</td><td>RF 对照</td><td>Random Forest</td><td>v20230728</td><td>5-fold GroupKFold</td><td>0.821</td><td>0.523</td><td>低敏感</td><td><span class="tag">对照</span></td><td><button data-action="modelDetail">查看详情</button></td></tr>
+            <tr><td>RUN077R_A</td><td>NEG-SENS +10%</td><td>XGBoost</td><td>v20230728</td><td>5-fold GroupKFold</td><td class="green-text">0.867</td><td>0.612</td><td>中等敏感</td><td><span class="tag ok">可展示</span></td><td><button data-action="modelDetail">查看详情</button></td></tr>
+            <tr><td>RUN076R_A</td><td>NEG-SENS -10%</td><td>XGBoost</td><td>v20230728</td><td>5-fold GroupKFold</td><td class="green-text">0.858</td><td>0.598</td><td>中等敏感</td><td><span class="tag ok">可展示</span></td><td><button data-action="modelDetail">查看详情</button></td></tr>
+            <tr><td>RUN075R_A</td><td>LR 基线模型</td><td>Logistic Regression</td><td>v20230728</td><td>5-fold GroupKFold</td><td>0.713</td><td>0.412</td><td>高敏感</td><td><span class="tag">对照</span></td><td><button data-action="modelDetail">查看详情</button></td></tr>
+          </tbody></table>
+          <p class="note">演示结果，待最终论文复核后替换。</p>
+        </article>
+        <div class="chart-grid">
+          <article class="glass-card"><h3>ROC 曲线（空间交叉验证平均）</h3><div class="roc-chart"><svg viewBox="0 0 420 260"><line x1="45" y1="215" x2="380" y2="215"/><line x1="45" y1="215" x2="45" y2="25"/><polyline class="diag" points="45,215 380,25"/><polyline class="roc-a" points="45,215 72,148 112,95 180,56 260,38 380,25"/><polyline class="roc-b" points="45,215 92,166 150,122 240,72 380,25"/><polyline class="roc-c" points="45,215 112,185 200,122 288,72 380,25"/></svg><div class="tooltip">FPR: 0.20<br>RUN079R_B: 0.78<br>RF 对照: 0.64</div></div></article>
+          <article class="glass-card"><h3>PR-AUC 对比</h3><div class="column-chart"><div style="--h:74%"><b>0.642</b><span>RUN079R_B</span></div><div style="--h:60%"><b>0.523</b><span>RF 对照</span></div><div style="--h:46%"><b>0.412</b><span>LR 基线</span></div></div></article>
+          <article class="glass-card"><h3>SHAP 因子贡献</h3><div class="bar-chart shap"><div style="--v:95%"><span>坡度</span><b>0.198</b></div><div style="--v:78%"><span>距断裂带</span><b>0.157</b></div><div style="--v:66%"><span>岩性类型</span><b>0.132</b></div><div style="--v:52%"><span>降雨强度</span><b>0.101</b></div><div style="--v:39%"><span>NDVI</span><b>0.074</b></div></div></article>
+          <article class="glass-card"><h3>不确定性与说明</h3><div class="uncertainty-box"><div class="cube"></div><p>预测不确定性（分位区间）<br>P10：0.182<br>P50：0.341<br>P90：0.612</p></div><p class="note">模型受数据质量、采样策略与因子选择影响，仅供课程系统展示与论文框架说明。</p></article>
+        </div>
+      </section>
+
+      <section class="view" id="data" data-title="数据管理" data-subtitle="滑坡清单、预测单元、因子图层与模型结果的数据资产管理">
+        <div class="data-layout">
+          <article class="glass-card upload-card"><h3>数据入库模拟</h3><p>用于展示静态原型交互，不实际上传至服务器。</p><div class="drop-zone" data-action="upload">拖拽 CSV / GeoJSON / SHP 压缩包到此处<br><span>或点击选择文件</span></div><button class="primary-btn wide" data-action="upload">模拟数据校验</button></article>
+          <article class="glass-card data-table-card"><div class="card-head"><h3>数据资产目录</h3><button class="ghost-btn small" data-action="refreshData">刷新目录</button></div><table><thead><tr><th>数据类型</th><th>表名</th><th>核心字段</th><th>记录数</th><th>状态</th><th>操作</th></tr></thead><tbody><tr><td>滑坡清单</td><td>t_landslide_inventory</td><td>location, event_time, type</td><td>1,246</td><td><span class="tag ok">已入库</span></td><td><button data-action="previewData">预览</button></td></tr><tr><td>预测单元</td><td>t_prediction_unit</td><td>unit_id, geometry, area</td><td>68,420</td><td><span class="tag ok">已入库</span></td><td><button data-action="previewData">预览</button></td></tr><tr><td>因子图层</td><td>t_factor_layer</td><td>factor_name, source</td><td>22</td><td><span class="tag ok">已入库</span></td><td><button data-action="previewData">预览</button></td></tr><tr><td>模型结果</td><td>t_susceptibility_result</td><td>score, zone, uncertainty</td><td>68,420</td><td><span class="tag blue">演示</span></td><td><button data-action="previewData">预览</button></td></tr></tbody></table></article>
+        </div>
+      </section>
+
+      <section class="view" id="report" data-title="报告导出" data-subtitle="课程报告、易发性地图、模型审计表与数据字典的成果输出">
+        <div class="report-layout">
+          <article class="glass-card report-preview"><h3>北京市浅层滑坡易发性评价信息系统设计与实现</h3><p>报告内容包括：项目概述、系统分析、系统设计、数据库设计、系统实现与总结。当前原型只覆盖易发性评价，不扩展至暴露评价和巡查优先级。</p><div class="paper"><b>目录</b><span>1 项目概述</span><span>2 系统分析</span><span>3 系统设计</span><span>4 系统实现</span><span>5 总结</span></div></article>
+          <article class="glass-card export-panel"><h3>成果导出</h3><button class="export-card" data-action="downloadDoc">课程报告 DOCX</button><button class="export-card" data-action="downloadMap">易发性图 PNG</button><button class="export-card" data-action="downloadAudit">模型审计表 CSV</button><button class="export-card" data-action="downloadDict">数据字典 XLSX</button><p class="note">本页面为静态 UI 原型，导出按钮提供交互反馈，不生成真实业务数据。</p></article>
+        </div>
+      </section>
+
+      <svg width="0" height="0" style="position:absolute">
+        <symbol id="mapSymbol" viewBox="0 0 900 560">
+          <defs><linearGradient id="riskMap2" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#0fc98c"/><stop offset=".36" stop-color="#b9db48"/><stop offset=".66" stop-color="#ff9822"/><stop offset="1" stop-color="#e92f38"/></linearGradient></defs>
+          <path class="base-region" d="M98 262C124 98 301 49 472 83c176 35 342 143 328 305-12 151-184 195-352 178C256 548 57 440 98 262Z"/>
+          <path class="r-low" d="M432 94c184 28 333 146 319 292-8 76-76 128-179 155 17-76 20-153-5-218-28-78-80-151-135-229Z"/>
+          <path class="r-mid" d="M235 122c80-49 165-55 246-22 50 69 88 134 101 209-96 15-191-6-286-64-46-28-65-70-61-123Z"/>
+          <path class="r-high" d="M106 263c20-73 54-116 129-141-4 53 15 97 74 129 92 51 180 70 273 58 28 72 19 154-10 232-43 14-93 23-144 18-181-17-368-121-322-296Z"/>
+          <path class="r-extreme" d="M96 288c56-43 112-36 181 18 78 61 166 112 295 235-82 34-258 18-375-58-89-57-134-136-101-195Z"/>
+        </symbol>
+      </svg>
+    </main>
+  </div>
+
+  <div class="modal" id="modal" aria-hidden="true"><div class="modal-card"><button class="close" data-action="closeModal">×</button><h3 id="modalTitle">提示</h3><p id="modalText">操作已完成。</p><button class="primary-btn" data-action="closeModal">确认</button></div></div>
+  <div class="toast" id="toast">操作完成</div>
+  <script src="app.js"></script>
+</body>
+</html>
